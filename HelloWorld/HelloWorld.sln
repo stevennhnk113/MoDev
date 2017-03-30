@@ -15,6 +15,7 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		HelloWorld\HelloWorld\HelloWorld.projitems*{54617f92-5b5d-458a-bcf2-8885aab0f43d}*SharedItemsImports = 4
 		HelloWorld\HelloWorld\HelloWorld.projitems*{56ff1317-180a-4219-b354-d5e161e49daf}*SharedItemsImports = 13
+		HelloWorld\HelloWorld\HelloWorld.projitems*{7cfc55a4-c17e-4bfc-a46a-66f750fa5056}*SharedItemsImports = 4
 		HelloWorld\HelloWorld\HelloWorld.projitems*{edea12eb-9f46-4862-bd02-aff053c4db04}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
