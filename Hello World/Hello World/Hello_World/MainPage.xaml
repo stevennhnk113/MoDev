@@ -5,20 +5,12 @@
 			 x:Class="Hello_World.MainPage">
 
 	<Label VerticalOptions="Center" HorizontalOptions="Center">
-		<Span Text="CPSC - 4910.01 SQ" />
-		<Span Text="Student - Steven Nguyen" />
-		<Span Text="Data/Time - Mar 29th" />
-		<Span Text="Code Review - None" />
-	</Label>
-
-	<Label FontSize=20>
-		<Label.FormattedText>
-			<FormattedString>
-				<Span Text="Red Bold" ForegroundColor="Red" FontAttributes="Bold" />
-				<Span Text="Default" />
-				<Span Text="italic small" FontAttributes="Italic" FontSize="Small" />
-			</FormattedString>
-		</Label.FormattedText>
+		<Label.Text>
+			CPSC - 4910.01 SQ
+			Student - Steven Nguyen
+			Data/Time - Mar 29th
+			Code Review - None
+		</Label.Text>
 	</Label>
 
 </ContentPage>
