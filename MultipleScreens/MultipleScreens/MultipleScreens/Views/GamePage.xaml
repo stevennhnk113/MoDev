@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MultipleScreens.Views.GamePage"
+			 xmlns:vm="clr-namespace:MultipleScreens.ViewModels;"
+			 Title="{Binding Title}">
+
+	<ContentPage.BindingContext>
+		<vm:GameViewModel />
+	</ContentPage.BindingContext>
+
+	<StackLayout>
+		<Button Margin="0,10,0,0"
+		Text="Score" 
+		Command="{Binding OpenWebCommand}"
+		BackgroundColor="{StaticResource Primary}"
+		TextColor="White"/>
+
+		<Button Margin="0,10,0,0"
+		Text="Character" 
+		Command="{Binding OpenWebCommand}"
+		BackgroundColor="{StaticResource Primary}"
+		TextColor="White"/>
+
+		<Button Margin="0,10,0,0"
+		Text="Inventory" 
+		Command="{Binding OpenWebCommand}"
+		BackgroundColor="{StaticResource Primary}"
+		TextColor="White"/>
+
+		<Button Margin="0,10,0,0"
+		Text="Monsters" 
+		Command="{Binding OpenWebCommand}"
+		BackgroundColor="{StaticResource Primary}"
+		TextColor="White"/>
+
+		<Button Margin="0,10,0,0"
+		Text="Items" 
+		Command="{Binding OpenWebCommand}"
+		BackgroundColor="{StaticResource Primary}"
+		TextColor="White"/>
+
+		<Button Margin="0,10,0,0"
+		Text="Battle" 
+		Command="{Binding OpenWebCommand}"
+		BackgroundColor="{StaticResource Primary}"
+		TextColor="White"/>
+	</StackLayout>
+
+</ContentPage>
