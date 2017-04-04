@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace MultipleScreens.ViewModels
 {
-	public class GameViewModel : BaseViewModel
+	public class GameViewModel : ContentPage
 	{
 		public GameViewModel()
 		{

@@ -16,5 +16,10 @@ namespace MultipleScreens.Views
 		{
 			InitializeComponent ();
 		}
+
+		async void GoToLearnMore(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new LearnMore());
+		}
 	}
 }

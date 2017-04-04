@@ -26,7 +26,7 @@ namespace MultipleScreens
 						Title = "About Me",
 						Icon = Device.OnPlatform<string>("tab_about.png",null,null)
 					},
-					new NavigationPage(new ItemsPage())
+					new NavigationPage(new GamePage())
 					{
 						Title = "Game",
 						Icon = Device.OnPlatform<string>("tab_feed.png",null,null)

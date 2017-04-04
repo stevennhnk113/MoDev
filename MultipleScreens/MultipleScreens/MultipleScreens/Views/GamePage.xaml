@@ -9,42 +9,53 @@
 		<vm:GameViewModel />
 	</ContentPage.BindingContext>
 
-	<StackLayout>
-		<Button Margin="0,10,0,0"
-		Text="Score" 
-		Command="{Binding OpenWebCommand}"
-		BackgroundColor="{StaticResource Primary}"
-		TextColor="White"/>
+	<ScrollView>
+		<StackLayout Margin="0,0,0,0">
+			<Image Source="https://www.walldevil.com/wallpapers/a47/wallpaper-darksiders-game-wallpapers-actor-background-desktop.jpg" />
 
-		<Button Margin="0,10,0,0"
-		Text="Character" 
-		Command="{Binding OpenWebCommand}"
-		BackgroundColor="{StaticResource Primary}"
-		TextColor="White"/>
+			<Button 
+				Text="Score" 
+				Clicked="GoToLearnMore" 
+				BackgroundColor="{StaticResource Primary}"	
+				VerticalOptions="FillAndExpand"	
+				TextColor="White"
+				Margin="0,0,0,0"/>
 
-		<Button Margin="0,10,0,0"
-		Text="Inventory" 
-		Command="{Binding OpenWebCommand}"
-		BackgroundColor="{StaticResource Primary}"
-		TextColor="White"/>
+			<Button
+				Text="Character" 
+				Clicked="GoToLearnMore"
+				BackgroundColor="{StaticResource Primary}"
+				VerticalOptions="CenterAndExpand"
+				TextColor="White"/>
 
-		<Button Margin="0,10,0,0"
-		Text="Monsters" 
-		Command="{Binding OpenWebCommand}"
-		BackgroundColor="{StaticResource Primary}"
-		TextColor="White"/>
+			<Button
+				Text="Inventory" 
+				Clicked="GoToLearnMore"
+				BackgroundColor="{StaticResource Primary}"
+				VerticalOptions="CenterAndExpand"
+				TextColor="White"/>
 
-		<Button Margin="0,10,0,0"
-		Text="Items" 
-		Command="{Binding OpenWebCommand}"
-		BackgroundColor="{StaticResource Primary}"
-		TextColor="White"/>
+			<Button
+				Text="Monsters" 
+				Clicked="GoToLearnMore"
+				BackgroundColor="{StaticResource Primary}"
+				VerticalOptions="CenterAndExpand"
+				TextColor="White"/>
 
-		<Button Margin="0,10,0,0"
-		Text="Battle" 
-		Command="{Binding OpenWebCommand}"
-		BackgroundColor="{StaticResource Primary}"
-		TextColor="White"/>
-	</StackLayout>
+			<Button
+				Text="Items" 
+				Clicked="GoToLearnMore"
+				BackgroundColor="{StaticResource Primary}"
+				VerticalOptions="CenterAndExpand"
+				TextColor="White"/>
+
+			<Button
+				Text="Battle" 
+				Clicked="GoToLearnMore"
+				BackgroundColor="{StaticResource Primary}"
+				VerticalOptions="CenterAndExpand"
+				TextColor="White"/>
+		</StackLayout>
+	</ScrollView>
 
 </ContentPage>
