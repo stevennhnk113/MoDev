@@ -28,9 +28,12 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\BaseDataObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Character.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AboutMeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GameViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LearnMoreViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SeeScoreViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\AboutMePage.xaml.cs">
       <DependentUpon>AboutMePage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -62,8 +65,16 @@
       <DependentUpon>LearnMore.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ListPage.xaml.cs">
+      <DependentUpon>ListPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\NewItemPage.xaml.cs">
       <DependentUpon>NewItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SeeScorePage.xaml.cs">
+      <DependentUpon>SeeScorePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +95,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\LearnMore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\SeeScorePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

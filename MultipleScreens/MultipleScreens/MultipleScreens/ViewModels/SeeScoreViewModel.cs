@@ -10,11 +10,11 @@ using Xamarin.Forms;
 
 namespace MultipleScreens.ViewModels
 {
-	public class LearnMoreViewModel : BaseViewModel
+	public class SeeScoreViewModel : BaseViewModel
 	{
-		public LearnMoreViewModel ()
+		public SeeScoreViewModel ()
 		{
-			Title = "Learn More";
+			Title = "Score";
 		}
 	}
 }

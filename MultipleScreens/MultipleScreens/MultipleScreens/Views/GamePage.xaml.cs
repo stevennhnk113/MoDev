@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using MultipleScreens.Models;
+using MultipleScreens.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,9 +16,29 @@ namespace MultipleScreens.Views
 			InitializeComponent ();
 		}
 
-		async void GoToLearnMore(object sender, EventArgs e)
+		async void GoToSeeScore(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new LearnMore());
+			await Navigation.PushAsync(new SeeScorePage());
+		}
+
+		async void ListCharacters(object sender, SelectedItemChangedEventArgs args)
+		{
+			await Navigation.PushAsync(new ListPage(new ListViewModel("Characters")));
+		}
+
+		async void ListMonsters(object sender, SelectedItemChangedEventArgs args)
+		{
+			await Navigation.PushAsync(new ListPage(new ListViewModel("Monsters")));
+		}
+
+		async void ListItems(object sender, SelectedItemChangedEventArgs args)
+		{
+			await Navigation.PushAsync(new ListPage(new ListViewModel("Items")));
+		}
+
+		async void ListInventory(object sender, SelectedItemChangedEventArgs args)
+		{
+			await Navigation.PushAsync(new ListPage(new ListViewModel("Inventory")));
 		}
 	}
 }

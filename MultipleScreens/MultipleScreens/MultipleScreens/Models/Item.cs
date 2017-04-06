@@ -9,7 +9,7 @@
 			set { SetProperty(ref text, value); }
 		}
 
-		string description = string.Empty;
+		public string description = string.Empty;
 		public string Description
 		{
 			get { return description; }

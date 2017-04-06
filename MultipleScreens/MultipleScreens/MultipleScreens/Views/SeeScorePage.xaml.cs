@@ -9,15 +9,11 @@ using Xamarin.Forms.Xaml;
 namespace MultipleScreens.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LearnMore : ContentPage
+	public partial class SeeScorePage : ContentPage
 	{
-		LearnMoreViewModel learnMoreViewModel;
-
-		public LearnMore (string Title)
+		public SeeScorePage ()
 		{
 			InitializeComponent ();
-
-			BindingContext = learnMoreViewModel = new LearnMoreViewModel();
 		}
 	}
 }

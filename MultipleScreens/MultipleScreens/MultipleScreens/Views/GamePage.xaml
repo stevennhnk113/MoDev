@@ -15,7 +15,7 @@
 
 			<Button 
 				Text="Score" 
-				Clicked="GoToLearnMore" 
+				Clicked="GoToSeeScore" 
 				BackgroundColor="{StaticResource Primary}"	
 				VerticalOptions="FillAndExpand"	
 				TextColor="White"
@@ -23,35 +23,35 @@
 
 			<Button
 				Text="Character" 
-				Clicked="GoToLearnMore"
+				Clicked="ListCharacters"
 				BackgroundColor="{StaticResource Primary}"
 				VerticalOptions="CenterAndExpand"
 				TextColor="White"/>
 
 			<Button
 				Text="Inventory" 
-				Clicked="GoToLearnMore"
+				Clicked="ListInventory"
 				BackgroundColor="{StaticResource Primary}"
 				VerticalOptions="CenterAndExpand"
 				TextColor="White"/>
 
 			<Button
 				Text="Monsters" 
-				Clicked="GoToLearnMore"
+				Clicked="ListMonsters"
 				BackgroundColor="{StaticResource Primary}"
 				VerticalOptions="CenterAndExpand"
 				TextColor="White"/>
 
 			<Button
 				Text="Items" 
-				Clicked="GoToLearnMore"
+				Clicked="ListItems"
 				BackgroundColor="{StaticResource Primary}"
 				VerticalOptions="CenterAndExpand"
 				TextColor="White"/>
-
 			<Button
+
 				Text="Battle" 
-				Clicked="GoToLearnMore"
+				Clicked="GoToSeeScore"
 				BackgroundColor="{StaticResource Primary}"
 				VerticalOptions="CenterAndExpand"
 				TextColor="White"/>
