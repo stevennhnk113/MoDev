@@ -11,7 +11,9 @@
 
 	<Label VerticalOptions="Center" HorizontalOptions="Center">
 		<Label.Text>
-			This page list the highest levels that your character party reach
+			This page list the highest 
+			levels that your character 
+			party reach.
 		</Label.Text>
 	</Label>
 	

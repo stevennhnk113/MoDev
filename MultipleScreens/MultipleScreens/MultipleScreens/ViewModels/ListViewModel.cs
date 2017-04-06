@@ -12,7 +12,6 @@ namespace MultipleScreens.ViewModels
 {
 	public class ListViewModel : BaseViewModel
 	{
-		public Item Item { get; set; }
 		public ListViewModel()
 		{
 
@@ -21,21 +20,7 @@ namespace MultipleScreens.ViewModels
 		public ListViewModel (string title)
 		{
 			Title = title;
-			switch (title)
-			{
-				case "Characters":
-					Item.description = "Show all the characters that you have.";
-					break;
-				case "Monsters":
-					Item.description = "Show all the monsters that you have encounter.";
-					break;
-				case "Inventory":
-					Item.description = "Show all the items that you have.";
-					break;
-				case "Items":
-					Item.description = "Show all the item that you have encounter.";
-					break;
-			}
 		}
 	}
+
 }

@@ -51,7 +51,7 @@
 			<Button
 
 				Text="Battle" 
-				Clicked="GoToSeeScore"
+				Clicked="GoToBattle"
 				BackgroundColor="{StaticResource Primary}"
 				VerticalOptions="CenterAndExpand"
 				TextColor="White"/>

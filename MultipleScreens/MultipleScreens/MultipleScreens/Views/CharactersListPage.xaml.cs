@@ -9,16 +9,17 @@ using Xamarin.Forms.Xaml;
 namespace MultipleScreens.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ListPage : ContentPage
+	public partial class CharactersListPage : ContentPage
 	{
+
 		ListViewModel viewModel;
 
-		public ListPage()
+		public CharactersListPage ()
 		{
-			InitializeComponent();
+			InitializeComponent ();
 		}
 
-		public ListPage(ListViewModel viewModel)
+		public CharactersListPage(ListViewModel viewModel)
 		{
 			InitializeComponent();
 

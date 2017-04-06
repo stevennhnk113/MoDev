@@ -23,22 +23,28 @@ namespace MultipleScreens.Views
 
 		async void ListCharacters(object sender, SelectedItemChangedEventArgs args)
 		{
-			await Navigation.PushAsync(new ListPage(new ListViewModel("Characters")));
+			await Navigation.PushAsync(new CharactersListPage(new ListViewModel("Characters")));
 		}
 
 		async void ListMonsters(object sender, SelectedItemChangedEventArgs args)
 		{
-			await Navigation.PushAsync(new ListPage(new ListViewModel("Monsters")));
+			await Navigation.PushAsync(new MonstersListPage(new ListViewModel("Monsters")));
 		}
 
 		async void ListItems(object sender, SelectedItemChangedEventArgs args)
 		{
-			await Navigation.PushAsync(new ListPage(new ListViewModel("Items")));
+			await Navigation.PushAsync(new ItemsListPage(new ListViewModel("Items")));
 		}
 
 		async void ListInventory(object sender, SelectedItemChangedEventArgs args)
 		{
-			await Navigation.PushAsync(new ListPage(new ListViewModel("Inventory")));
+			await Navigation.PushAsync(new InventoryPage(new ListViewModel("Inventory")));
 		}
+
+		async void GoToBattle(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new BattlePage());
+		}
+
 	}
 }

@@ -1,20 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 x:Class="MultipleScreens.Views.AboutMePage"
+			 x:Class="MultipleScreens.Views.ItemsListPage"
 			 xmlns:vm="clr-namespace:MultipleScreens.ViewModels;"
 			 Title="{Binding Title}">
 
 	<ContentPage.BindingContext>
-		<vm:AboutMeViewModel />
+		<vm:ListViewModel />
 	</ContentPage.BindingContext>
 
 	<Label VerticalOptions="Center" HorizontalOptions="Center">
 		<Label.Text>
-			CPSC - 4910.01 SQ
-			Student - Steven Nguyen
-			Data/Time - Apr 6th
-			Code Review - None
+			This page show what
+			items do you have
 		</Label.Text>
 	</Label>
 
