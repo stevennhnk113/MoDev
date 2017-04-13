@@ -23,6 +23,8 @@ namespace MultipleScreens.Views
 			InitializeComponent();
 
 			BindingContext = this.viewModel = viewModel;
+
+			viewModel.ExecuteLoadItemsCommand();
 		}
 
 		async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
