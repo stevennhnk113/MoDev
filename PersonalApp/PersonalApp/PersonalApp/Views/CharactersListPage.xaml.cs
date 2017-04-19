@@ -1,0 +1,29 @@
+﻿using System;
+
+using PersonalApp.Models;
+using PersonalApp.ViewModels;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace PersonalApp.Views
+{
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class CharactersListPage : ContentPage
+	{
+
+		ListViewModel viewModel;
+
+		public CharactersListPage()
+		{
+			InitializeComponent();
+		}
+
+		public CharactersListPage(ListViewModel viewModel)
+		{
+			InitializeComponent();
+
+			BindingContext = this.viewModel = viewModel;
+		}
+	}
+}
