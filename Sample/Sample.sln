@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sample", "Sample\Sample\Sample.shproj", "{A812867D-9AA9-4D1F-BD6B-45139AACA610}"
 EndProject
@@ -15,6 +15,8 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Sample\Sample\Sample.projitems*{3943cde1-273f-43bd-b106-2df3150ca840}*SharedItemsImports = 4
 		Sample\Sample\Sample.projitems*{a812867d-9aa9-4d1f-bd6b-45139aaca610}*SharedItemsImports = 13
+		Sample\Sample\Sample.projitems*{cbe4df40-dbd9-40b6-93e8-ca94b1807d84}*SharedItemsImports = 4
+		Sample\Sample\Sample.projitems*{f1b24613-4cb0-4a42-8442-786cc5a5adb4}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

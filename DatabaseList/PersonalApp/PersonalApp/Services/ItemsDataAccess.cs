@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using PersonalApp.Models;
 using PersonalApp.Services;
+using System;
 
 namespace PersonalApp
 {
@@ -18,7 +19,14 @@ namespace PersonalApp
 			database =
 			  DependencyService.Get<IDatabaseConnection>().
 			  DbConnection();
-			database.CreateTable<Item>();
+			try
+			{
+				database.CreateTable<Item>();
+			}
+			catch
+			{
+				
+			}
 			this.Items =
 			  new ObservableCollection<Item>(database.Table<Item>());
 			// If the table is empty, initialize the collection

@@ -23,3 +23,4 @@ namespace PersonalApp.Views
 		}
 	}
 }
+

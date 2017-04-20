@@ -4,15 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{FFD44677-4F2D-4CDF-A48E-F659F6AF679A}</ProjectGuid>
+    <ProjectGuid>{ABD79639-7E1A-4C1F-9C3F-123CAF97C431}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PersonalApp.UWP</RootNamespace>
     <AssemblyName>PersonalApp.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
@@ -103,6 +103,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseConnection_UWP.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -135,7 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PersonalApp\PersonalApp.csproj">
-      <Project>{5f8700e2-0282-4785-9344-fec70ad1d40b}</Project>
+      <Project>{27ad9e4a-ef90-4d25-bbb9-b6a8a3f0ffe6}</Project>
       <Name>PersonalApp</Name>
     </ProjectReference>
   </ItemGroup>

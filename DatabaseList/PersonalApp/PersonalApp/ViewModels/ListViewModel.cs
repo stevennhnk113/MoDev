@@ -27,8 +27,9 @@ namespace PersonalApp.ViewModels
 		{
 			Title = title;
 			Items = new ObservableRangeCollection<Item>();
-			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 			dataAccess = new ItemsDataAccess();
+			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+			
 		}
 
 		public async Task ExecuteLoadItemsCommand()

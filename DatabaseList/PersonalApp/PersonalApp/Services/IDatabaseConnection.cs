@@ -1,4 +1,6 @@
-﻿namespace PersonalApp.Services
+﻿
+
+namespace PersonalApp.Services
 {
 	public interface IDatabaseConnection
 	{

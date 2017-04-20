@@ -11,9 +11,10 @@ namespace PersonalApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class BattlePage : ContentPage
 	{
-		public BattlePage ()
+		public BattlePage()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
 	}
 }
+
