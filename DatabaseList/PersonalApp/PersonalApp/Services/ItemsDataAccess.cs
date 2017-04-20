@@ -83,7 +83,7 @@ namespace PersonalApp
 			}
 		}
 
-		public int DeleteCustomer(Item item)
+		public int DeleteItem(Item item)
 		{
 			var id = item.ItemNum;
 			if (id != 0)

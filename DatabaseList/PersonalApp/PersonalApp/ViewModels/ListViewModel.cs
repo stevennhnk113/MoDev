@@ -6,6 +6,7 @@ using PersonalApp.Services;
 using PersonalApp.Helpers;
 using PersonalApp.Models;
 using PersonalApp.Views;
+using PersonalApp;
 
 using Xamarin.Forms;
 
@@ -30,9 +31,13 @@ namespace PersonalApp.ViewModels
 			dataAccess = new ItemsDataAccess();
 			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 			this.dataAccess = dataAccess;
+
+			MessagingCenter.Subscribe<ContentPage>(this, "refresh", (sender) => {
+				ExecuteLoadItemsCommand();
+			});
 		}
 
-		public async Task ExecuteLoadItemsCommand()
+		async Task ExecuteLoadItemsCommand()
 		{
 			if (IsBusy)
 				return;
@@ -40,14 +45,8 @@ namespace PersonalApp.ViewModels
 			IsBusy = true;
 			try
 			{
-				//Items.Clear();
-				//var items = await DataStore.GetItemsAsync(true);
-				//Items.ReplaceRange(items);
-
 				Items.Clear();
-
 				var items = dataAccess.GetAllItem();
-
 				Items.ReplaceRange(items);
 			}
 			catch (Exception ex)

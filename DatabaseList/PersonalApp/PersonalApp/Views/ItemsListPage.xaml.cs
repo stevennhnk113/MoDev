@@ -22,16 +22,17 @@ namespace PersonalApp.Views
 
 			BindingContext = this.viewModel = new ListViewModel("Items", dataAccess);
 
-			viewModel.ExecuteLoadItemsCommand();
+			MessagingCenter.Send<ContentPage>(this, "refresh");
 		}
 
 		async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
 		{
+
 			var item = args.SelectedItem as Item;
 			if (item == null)
 				return;
 
-			await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+			await Navigation.PushAsync(new ItemDetailPage(item, dataAccess));
 
 			// Manually deselect item
 			ItemsListView.SelectedItem = null;

@@ -34,7 +34,8 @@ namespace PersonalApp.Views
 		async void Save_Clicked()
 		{
 			dataAccess.SaveItem(Item);
-			await Navigation.PopToRootAsync();
+			MessagingCenter.Send<ContentPage>(this, "refresh");
+			await Navigation.PopAsync();
 		}
 	}
 }
