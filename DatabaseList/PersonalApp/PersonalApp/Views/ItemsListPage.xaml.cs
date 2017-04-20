@@ -12,17 +12,15 @@ namespace PersonalApp.Views
 	public partial class ItemsListPage : ContentPage
 	{
 		ListViewModel viewModel;
+		ItemsDataAccess dataAccess;
 
 		public ItemsListPage()
 		{
 			InitializeComponent();
-		}
 
-		public ItemsListPage(ListViewModel viewModel)
-		{
-			InitializeComponent();
+			dataAccess = new ItemsDataAccess();
 
-			BindingContext = this.viewModel = viewModel;
+			BindingContext = this.viewModel = new ListViewModel("Items", dataAccess);
 
 			viewModel.ExecuteLoadItemsCommand();
 		}
@@ -37,6 +35,11 @@ namespace PersonalApp.Views
 
 			// Manually deselect item
 			ItemsListView.SelectedItem = null;
+		}
+
+		async void AddItem_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new AddItemPage(dataAccess));
 		}
 	}
 }

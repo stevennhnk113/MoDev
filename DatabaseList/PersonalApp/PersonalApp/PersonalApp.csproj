@@ -44,6 +44,7 @@
     <Compile Include="Models\BaseDataObject.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IDataAccess.cs" />
     <Compile Include="Services\IDatabaseConnection.cs" />
     <Compile Include="Services\IDataStore.cs" />
     <Compile Include="Services\ItemsDataAccess.cs" />
@@ -57,6 +58,9 @@
     <Compile Include="ViewModels\SeeScoreViewModel.cs" />
     <Compile Include="Views\AboutMePage.xaml.cs">
       <DependentUpon>AboutMePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddItemPage.xaml.cs">
+      <DependentUpon>AddItemPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\BattlePage.xaml.cs">
       <DependentUpon>BattlePage.xaml</DependentUpon>
@@ -168,6 +172,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\SeeScorePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\AddItemPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

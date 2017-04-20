@@ -2,6 +2,7 @@
 
 using PersonalApp.Models;
 using PersonalApp.ViewModels;
+using PersonalApp.Services;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -23,22 +24,22 @@ namespace PersonalApp.Views
 
 		async void ListCharacters(object sender, SelectedItemChangedEventArgs args)
 		{
-			await Navigation.PushAsync(new CharactersListPage(new ListViewModel("Characters")));
+			await Navigation.PushAsync(new CharactersListPage());
 		}
 
 		async void ListMonsters(object sender, SelectedItemChangedEventArgs args)
 		{
-			await Navigation.PushAsync(new MonstersListPage(new ListViewModel("Monsters")));
+			await Navigation.PushAsync(new MonstersListPage());
 		}
 
 		async void ListItems(object sender, SelectedItemChangedEventArgs args)
 		{
-			await Navigation.PushAsync(new ItemsListPage(new ListViewModel("Items")));
+			await Navigation.PushAsync(new ItemsListPage());
 		}
 
 		async void ListInventory(object sender, SelectedItemChangedEventArgs args)
 		{
-			await Navigation.PushAsync(new InventoryPage(new ListViewModel("Inventory")));
+			await Navigation.PushAsync(new InventoryPage());
 		}
 
 		async void GoToBattle(object sender, EventArgs e)

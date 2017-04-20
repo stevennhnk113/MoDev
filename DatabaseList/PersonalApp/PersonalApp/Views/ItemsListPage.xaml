@@ -5,6 +5,10 @@
 			 xmlns:vm="clr-namespace:PersonalApp.ViewModels;"
 			 Title="{Binding Title}">
 
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Add Item" Clicked="AddItem_Clicked" />
+	</ContentPage.ToolbarItems>
+
 	<StackLayout>
 		<Label VerticalOptions="Center" HorizontalOptions="Center">
 			<Label.Text>

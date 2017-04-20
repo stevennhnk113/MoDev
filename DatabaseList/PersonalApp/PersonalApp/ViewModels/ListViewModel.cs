@@ -23,13 +23,13 @@ namespace PersonalApp.ViewModels
 
 		}
 
-		public ListViewModel(string title)
+		public ListViewModel(string title, ItemsDataAccess dataAccess)
 		{
 			Title = title;
 			Items = new ObservableRangeCollection<Item>();
 			dataAccess = new ItemsDataAccess();
 			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-			
+			this.dataAccess = dataAccess;
 		}
 
 		public async Task ExecuteLoadItemsCommand()
@@ -46,7 +46,7 @@ namespace PersonalApp.ViewModels
 
 				Items.Clear();
 
-				var items = dataAccess.GetFilteredItems(0);
+				var items = dataAccess.GetAllItem();
 
 				Items.ReplaceRange(items);
 			}
@@ -65,6 +65,8 @@ namespace PersonalApp.ViewModels
 				IsBusy = false;
 			}
 		}
+
+
 	}
 
 }

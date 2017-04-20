@@ -53,12 +53,12 @@ namespace PersonalApp.Models
 	[Table("Items")]
 	public class Item : BaseDataObject
 	{
-		int id;
+		int itemNum;
 		[PrimaryKey, AutoIncrement]
-		public int ID
+		public int ItemNum
 		{
-			get { return id; }
-			set { SetProperty(ref id, value); }
+			get { return itemNum; }
+			set { SetProperty(ref itemNum, value); }
 		}
 
 		string itemName = string.Empty;
@@ -69,29 +69,29 @@ namespace PersonalApp.Models
 			set { SetProperty(ref itemName, value); }
 		}
 
-		string strength = string.Empty;
-		public string Strength
+		int strength = 0;
+		public int Strength
 		{
 			get { return strength; }
 			set { SetProperty(ref strength, value); }
 		}
 
-		string health = string.Empty;
-		public string Health
+		int health = 0;
+		public int Health
 		{
 			get { return health; }
 			set { SetProperty(ref health, value); }
 		}
 
-		string defense = string.Empty;
-		public string Defense
+		int defense = 0;
+		public int Defense
 		{
 			get { return defense; }
 			set { SetProperty(ref defense, value); }
 		}
 
-		string speed = string.Empty;
-		public string Speed
+		int speed = 0;
+		public int Speed
 		{
 			get { return speed; }
 			set { SetProperty(ref speed, value); }

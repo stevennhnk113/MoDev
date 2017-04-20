@@ -17,13 +17,8 @@ namespace PersonalApp.Views
 		public CharactersListPage()
 		{
 			InitializeComponent();
-		}
 
-		public CharactersListPage(ListViewModel viewModel)
-		{
-			InitializeComponent();
-
-			BindingContext = this.viewModel = viewModel;
+			BindingContext = this.viewModel = new ListViewModel("Characters", null);
 		}
 	}
 }

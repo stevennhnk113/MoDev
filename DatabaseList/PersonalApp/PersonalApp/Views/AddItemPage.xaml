@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="PersonalApp.Views.AddItemPage"
+			 xmlns:vm="clr-namespace:PersonalApp.ViewModels;"
+			Title="New Item">
+
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Save" Clicked="Save_Clicked" />
+	</ContentPage.ToolbarItems>
+
+	<ContentPage.Content>
+		<StackLayout Spacing="20" Padding="15">
+			<Label Text="Item Name" FontSize="Medium" />
+			<Entry Text="{Binding Item.ItemName}" FontSize="Small" />
+
+			<Label Text="Strength" FontSize="Medium" />
+			<Editor Text="{Binding Item.Strength}" FontSize="Small" Margin="0" />
+
+			<Label Text="Health" FontSize="Medium" />
+			<Editor Text="{Binding Item.Health}" FontSize="Small" Margin="0" />
+
+			<Label Text="Speed" FontSize="Medium" />
+			<Editor Text="{Binding Item.Speed}" FontSize="Small" Margin="0" />
+
+			<Label Text="Defense" FontSize="Medium" />
+			<Editor Text="{Binding Item.Defense}" FontSize="Small" Margin="0" />
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

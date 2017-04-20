@@ -19,21 +19,12 @@ namespace PersonalApp
 			database =
 			  DependencyService.Get<IDatabaseConnection>().
 			  DbConnection();
-			try
-			{
-				database.CreateTable<Item>();
-			}
-			catch
-			{
-				
-			}
-			this.Items =
-			  new ObservableCollection<Item>(database.Table<Item>());
-			// If the table is empty, initialize the collection
-			if (!database.Table<Item>().Any())
-			{
-				AddNewItem();
-			}
+
+			database.CreateTable<Item>();
+
+			this.Items = new ObservableCollection<Item>(database.Table<Item>());
+
+			
 		}
 		public void AddNewItem()
 		{
@@ -50,8 +41,19 @@ namespace PersonalApp
 			lock (collisionLock)
 			{
 				var query = from cust in database.Table<Item>()
-							where cust.ID == id
+							where cust.ItemNum == id
 							select cust;
+				return query.AsEnumerable();
+			}
+		}
+
+		public IEnumerable<Item> GetAllItem()
+		{
+			// Use locks to avoid database collitions
+			lock (collisionLock)
+			{
+				var query = from item in database.Table<Item>()
+							select item;
 				return query.AsEnumerable();
 			}
 		}
@@ -61,29 +63,29 @@ namespace PersonalApp
 			lock (collisionLock)
 			{
 				return database.Table<Item>().
-				  FirstOrDefault(item => item.ID == id);
+				  FirstOrDefault(item => item.ItemNum == id);
 			}
 		}
 		public int SaveItem(Item item)
 		{
 			lock (collisionLock)
 			{
-				if (item.ID != 0)
+				if (item.ItemNum != 0)
 				{
 					database.Update(item);
-					return item.ID;
+					return item.ItemNum;
 				}
 				else
 				{
 					database.Insert(item);
-					return item.ID;
+					return item.ItemNum;
 				}
 			}
 		}
 
 		public int DeleteCustomer(Item item)
 		{
-			var id = item.ID;
+			var id = item.ItemNum;
 			if (id != 0)
 			{
 				lock (collisionLock)

@@ -16,13 +16,8 @@ namespace PersonalApp.Views
 		public InventoryPage()
 		{
 			InitializeComponent();
-		}
 
-		public InventoryPage(ListViewModel viewModel)
-		{
-			InitializeComponent();
-
-			BindingContext = this.viewModel = viewModel;
+			BindingContext = this.viewModel = new ListViewModel("Inventory", null);
 		}
 	}
 }

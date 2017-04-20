@@ -14,7 +14,9 @@ namespace LocalDataAccess.Droid
 			var path = Path.Combine(System.Environment.
 			  GetFolderPath(System.Environment.
 			  SpecialFolder.Personal), dbName);
-			return new SQLiteConnection(path);
+
+			var temp = new SQLiteConnection(path);
+			return temp;
 		}
 	}
 }
