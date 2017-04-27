@@ -41,8 +41,6 @@ namespace PersonalApp.Views
 		async void UpdateItem_Clicked()
 		{
 			await Navigation.PushAsync(new UpdateItemPage(item, dataAccess));
-			MessagingCenter.Send<ContentPage>(this, "refresh");
-			await Navigation.PopAsync();
 		}
 	}
 }

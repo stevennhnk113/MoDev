@@ -13,7 +13,7 @@ namespace PersonalApp.Views
 
 		ItemsDataAccess dataAccess;
 
-		Item item;
+		public Item Item { get; set; }
 
 		// Note - The Xamarin.Forms Previewer requires a default, parameterless constructor to render a page.
 		public UpdateItemPage()
@@ -26,14 +26,14 @@ namespace PersonalApp.Views
 			InitializeComponent();
 
 			this.dataAccess = dataAccess;
-			this.item = item;
+			this.Item = item;
 
 			BindingContext = this;
 		}
 
 		async void UpdateItem_Clicked()
 		{
-			dataAccess.SaveItem(item);
+			dataAccess.SaveItem(Item);
 			MessagingCenter.Send<ContentPage>(this, "refresh");
 			await Navigation.PopAsync();
 		}
