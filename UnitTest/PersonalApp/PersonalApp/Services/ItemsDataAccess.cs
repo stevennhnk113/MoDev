@@ -39,13 +39,13 @@ namespace PersonalApp
 
 				database.CreateTable<Item>();
 				this.Items = new ObservableCollection<Item>(database.Table<Item>());
-			} else
+			}
+			else
 			{
 				testList = new List<Item>();
 			}
 
 			this.testMode = testMode;
-
 		}
 
 		public IEnumerable<Item> GetAllItem()
@@ -54,7 +54,7 @@ namespace PersonalApp
 			if (testMode)
 			{
 				List<Item> temp = new List<Item>();
-				foreach(Item item in testList)
+				foreach (Item item in testList)
 				{
 					temp.Add(new Item()
 					{
@@ -76,6 +76,32 @@ namespace PersonalApp
 								select item;
 					return query.AsEnumerable();
 				}
+			}
+		}
+
+		public Item GetItem(int itemNum)
+		{
+			if (testMode)
+			{
+				foreach(Item item in testList)
+				{
+					if(item.ItemNum == itemNum)
+					{
+						return new Item()
+						{
+							Strength = item.Strength,
+							Health = item.Health,
+							Speed = item.Speed,
+							Defense = item.Defense
+						};
+					}
+				}
+				return null;
+			}
+
+			lock (collisionLock)
+			{
+				return database.Table<Item>().FirstOrDefault(item => item.ItemNum == itemNum);
 			}
 		}
 
@@ -104,7 +130,7 @@ namespace PersonalApp
 					int num;
 					try
 					{
-						num = testList.Last().ItemNum;
+						num = testList.Last().ItemNum + 1;
 					}
 					catch
 					{
@@ -115,20 +141,18 @@ namespace PersonalApp
 					return num;
 				}
 			}
-			else
+
+			lock (collisionLock)
 			{
-				lock (collisionLock)
+				if (inputItem.ItemNum != 0)
 				{
-					if (inputItem.ItemNum != 0)
-					{
-						database.Update(inputItem);
-						return inputItem.ItemNum;
-					}
-					else
-					{
-						database.Insert(inputItem);
-						return inputItem.ItemNum;
-					}
+					database.Update(inputItem);
+					return inputItem.ItemNum;
+				}
+				else
+				{
+					database.Insert(inputItem);
+					return inputItem.ItemNum;
 				}
 			}
 		}
@@ -138,9 +162,9 @@ namespace PersonalApp
 			var id = item.ItemNum;
 			if (testMode)
 			{
-				for(int index = 0; index < testList.Count; index++)
+				for (int index = 0; index < testList.Count; index++)
 				{
-					if(testList[index].ItemNum == id)
+					if (testList[index].ItemNum == id)
 					{
 						testList.RemoveAt(index);
 					}
