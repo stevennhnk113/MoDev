@@ -3,7 +3,7 @@ using Xamarin.Forms;
 using LocalDataAccess.UWP;
 using Windows.Storage;
 using System.IO;
-using PersonalApp.Service;
+using PersonalApp.Services;
 
 [assembly: Dependency(typeof(DatabaseConnection_UWP))]
 namespace LocalDataAccess.UWP

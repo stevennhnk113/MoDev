@@ -23,12 +23,16 @@ namespace PersonalApp.Views
 
 		public ItemDetailPage(Item item, ItemsDataAccess dataAccess)
 		{
-			InitializeComponent();
+			if (!dataAccess.TestMode)
+			{
+				InitializeComponent();
+				BindingContext = this.viewModel = new ItemDetailViewModel(item);
+			}
 
 			this.dataAccess = dataAccess;
 			this.item = item;
 
-			BindingContext = this.viewModel = new ItemDetailViewModel(item);
+			
 		}
 
 		async void DeleteItem_Clicked()
@@ -36,6 +40,11 @@ namespace PersonalApp.Views
 			dataAccess.DeleteItem(item);
 			MessagingCenter.Send<ContentPage>(this, "refresh");
 			await Navigation.PopAsync();
+		}
+
+		public void TestDeleteItem_Clicked()
+		{
+			dataAccess.DeleteItem(item);
 		}
 
 		async void UpdateItem_Clicked()

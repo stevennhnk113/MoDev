@@ -15,7 +15,11 @@ namespace PersonalApp.Views
 
 		public AddItemPage(ItemsDataAccess dataAccess)
 		{
-			InitializeComponent();
+			if (!dataAccess.TestMode)
+			{
+				InitializeComponent();
+				BindingContext = this;
+			}
 
 			this.dataAccess = dataAccess;
 
@@ -28,7 +32,7 @@ namespace PersonalApp.Views
 				Defense = 0
 			};
 
-			BindingContext = this;
+			
 		}
 
 		async void Save_Clicked()
@@ -36,6 +40,11 @@ namespace PersonalApp.Views
 			dataAccess.SaveItem(Item);
 			MessagingCenter.Send<ContentPage>(this, "refresh");
 			await Navigation.PopAsync();
+		}
+
+		public void TestSave_Clicked()
+		{
+			dataAccess.SaveItem(Item);
 		}
 	}
 }

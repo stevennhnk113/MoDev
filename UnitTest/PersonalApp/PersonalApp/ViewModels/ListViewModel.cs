@@ -28,7 +28,7 @@ namespace PersonalApp.ViewModels
 		{
 			Title = title;
 			Items = new ObservableRangeCollection<Item>();
-			dataAccess = new ItemsDataAccess();
+			this.dataAccess = dataAccess;
 			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 			this.dataAccess = dataAccess;
 
@@ -37,7 +37,7 @@ namespace PersonalApp.ViewModels
 			});
 		}
 
-		async Task ExecuteLoadItemsCommand()
+		public async Task ExecuteLoadItemsCommand()
 		{
 			if (IsBusy)
 				return;

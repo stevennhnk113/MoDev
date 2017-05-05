@@ -16,6 +16,11 @@ namespace PersonalApp
 		public ObservableCollection<Item> Items { get; set; }
 		bool testMode;
 
+		public bool TestMode
+		{
+			get { return testMode; }
+		}
+
 		List<Item> testList;
 
 		public ItemsDataAccess()
