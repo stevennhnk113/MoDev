@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="PersonalApp.Views.SeeScorePage"
+			 xmlns:vm="clr-namespace:PersonalApp.ViewModels;"
+			 Title="{Binding Title}">
+
+	<ContentPage.BindingContext>
+		<vm:SeeScoreViewModel />
+	</ContentPage.BindingContext>
+
+	<Label VerticalOptions="Center" HorizontalOptions="Center">
+		<Label.Text>
+			This page list the highest 
+			levels that your character 
+			party reach.
+		</Label.Text>
+	</Label>
+
+</ContentPage>

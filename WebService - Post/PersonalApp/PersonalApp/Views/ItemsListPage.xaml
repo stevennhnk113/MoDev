@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="PersonalApp.Views.ItemsListPage"
+			 xmlns:vm="clr-namespace:PersonalApp.ViewModels;"
+			 Title="{Binding Title}">
+
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Send" Clicked="Send" />
+	</ContentPage.ToolbarItems>
+
+	<StackLayout>
+		<StackLayout Spacing="20" Padding="15">
+			<Label Text="Random Number" FontSize="Medium" />
+			<Entry Keyboard="Numeric" Text="{Binding Character.RandomNum}" FontSize="Small" />
+
+			<Picker Title="Select a monkey" SelectedIndexChanged="OnPickerSelectedIndexChanged">
+				<Picker.Items>
+					<x:String>Fighter</x:String>
+					<x:String>Cleric</x:String>
+					<x:String>Thief</x:String>
+				</Picker.Items>
+			</Picker>
+
+			<Label Text="Level" FontSize="Medium" />
+			<Editor Keyboard="Numeric" Text="{Binding Character.Level}" FontSize="Small" Margin="0" />
+		</StackLayout>
+
+		<ListView x:Name="ItemsListView"
+				ItemsSource="{Binding Items}"
+				VerticalOptions="FillAndExpand"
+				HasUnevenRows="true"
+				RefreshCommand="{Binding LoadItemsCommand}"
+				IsPullToRefreshEnabled="true"
+				IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+				CachingStrategy="RecycleElement"
+				ItemSelected="OnItemSelected">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Padding="10">
+							<Label Text="{Binding ItemName}" 
+								   LineBreakMode="NoWrap" 
+								   Style="{DynamicResource ListItemTextStyle}" 
+								   FontSize="16"/>
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+
+</ContentPage>
