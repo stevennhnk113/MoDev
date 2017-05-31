@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="InterviewTask.Views.LoginPage"
+			 x:Name="LoginPage"
+			 BackgroundColor="RosyBrown">
+
+
+	<StackLayout>
+		<Label FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" Text="Log In" />
+
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Image Source="Facebook.png" Grid.Row="0" Grid.Column="1"/>
+			<Image Source="Twitter.png" Grid.Row="0" Grid.Column="2"/>
+			<Image Source="Google.png" Grid.Row="0" Grid.Column="3"/>
+			<Image Source="QQ.png" Grid.Row="1" Grid.Column="1"/>
+			<Image Source="Wechat.png" Grid.Row="1" Grid.Column="2"/>
+			<Image Source="Weibo.png" Grid.Row="1" Grid.Column="3"/>
+		</Grid>
+
+		<Label FontSize="Small" TextColor="White" HorizontalTextAlignment="Center" Text="Or" />
+
+		<StackLayout Spacing="3">
+			<RelativeLayout HorizontalOptions="Center">
+				<!--<Entry Text="" Placeholder="Username" Style="{StaticResource LoginInput}" />-->
+				<Image Source="Txt.png"/>
+			</RelativeLayout>
+
+			<RelativeLayout HorizontalOptions="Center">
+				<!--<Entry Text="" Placeholder="Password" IsPassword="True" Style="{StaticResource LoginInput}" />-->
+				<Image Source="Txt.png" />
+			</RelativeLayout>
+		</StackLayout>
+
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Image Source="UnCheckBox.png" Grid.Row="0" Grid.Column="0"/>
+			<Label Text="Twitter.png" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+		</Grid>
+
+
+
+	</StackLayout>
+	
+	
+</ContentPage>
