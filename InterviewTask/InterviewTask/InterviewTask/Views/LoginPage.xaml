@@ -5,23 +5,28 @@
 			 x:Name="LoginPage"
 			 BackgroundImage="LoginBackground.png">
 
-
 	<StackLayout>
-		<Label FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" Text="Log In" />
+		<Label Text="Log In" FontSize="35" TextColor="White" 
+			   HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"
+			   Margin="0,0,0,0"/>
 
-		<Grid>
+		<Grid Style="{StaticResource GridInLoginPage}">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="*"/>
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
 				<ColumnDefinition Width="*" />
 			</Grid.ColumnDefinitions>
-			<Image Source="Facebook.png" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+			<Image Source="Facebook.png" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer NumberOfTapsRequired="1" />
+				</Image.GestureRecognizers>	
+			</Image>
 			<Image Source="Twitter.png" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"/>
 			<Image Source="Google.png" Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center"/>
 			<Image Source="QQ.png" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
@@ -31,52 +36,86 @@
 
 		<Label FontSize="Small" TextColor="White" HorizontalTextAlignment="Center" Text="Or" />
 
-		<Grid HorizontalOptions="Center">
+		<Grid Style="{StaticResource GridInLoginPage}">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
 			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="35"/>
+				<RowDefinition Height="35"/>
 			</Grid.RowDefinitions>
-			<Image Source="Txt.png" Grid.Column="0" Grid.Row="0" />
-			<Entry Text="" Placeholder="Username" Style="{StaticResource LoginInput}"  Grid.Column="0" Grid.Row="0"/>
-			<Image Source="Txt.png" Grid.Column="0" Grid.Row="1"/>
-			<Entry Text="" Placeholder="Password" IsPassword="True" Style="{StaticResource LoginInput}" Grid.Column="0" Grid.Row="1"/>
+			
+			<Image Grid.Column="0" Grid.Row="0" 
+				   Source="Txt.png"
+				   Aspect="Fill" Margin="0,0,0,0"/>
+			<Entry Grid.Column="0" Grid.Row="0"
+				   Placeholder="Username" FontSize="12"
+				   Style="{StaticResource LoginInput}"/>
+			
+			<Image Grid.Column="0" Grid.Row="1"
+				   Source="Txt.png"
+				   Aspect="Fill"/>
+			<Entry Grid.Column="0" Grid.Row="1"
+				   Placeholder="Password" FontSize="12"
+				   Style="{StaticResource LoginInput}"
+				   IsPassword="True" />
 		</Grid>
 
-		<Grid HorizontalOptions="Center">
+		<Grid Style="{StaticResource GridInLoginPage}" BackgroundColor="White">
 			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto"/>
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto" />
-				<ColumnDefinition Width="Auto" />
-				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
-			<Image Source="UnCheckBox.png" Grid.Row="0" Grid.Column="0" />
-			<Label Text="Remember me?" Grid.Row="0" Grid.Column="1" LineBreakMode="NoWrap" VerticalOptions="Center"/>
+			<Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+					Clicked="ChangeCheckBoxStatus" 
+					BackgroundColor="Transparent" BorderColor="Transparent" Opacity="0"/>
+			<Image x:Name="RememberPasswordUnCheckbox" Source="UnCheckBox.png" Grid.Row="0" Grid.Column="0" IsVisible="True"/>
+			<Image x:Name="RememberPasswordCheckbox" Source="CheckBox.png" Grid.Row="0" Grid.Column="0" IsVisible="False"/>
+			<Label Grid.Row="0" Grid.Column="1" 
+				   Text="Remember me?" 
+				   LineBreakMode="NoWrap" VerticalOptions="Center"/>
 		</Grid>
 
-		<Grid HorizontalOptions="Center">
+		<Grid Style="{StaticResource GridInLoginPage}">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
 			<Grid.RowDefinitions>
+				<RowDefinition Height="35" />
 				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="35"/>
 			</Grid.RowDefinitions>
-			<Button Image="RedBTN.png" Grid.Row="0" Grid.Column="0" />
-			<Label Text="Login" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" InputTransparent="True"/>
 			
-			<Label Text="Forgot your password?" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" InputTransparent="True" TextColor="Red" Margin="0,0,0,30"/>
+			<Button Grid.Row="0" Grid.Column="0"/>
+			<Image Grid.Row="0" Grid.Column="0" Source="RedBTN.png"/>
+			<Label Grid.Row="0" Grid.Column="0" 
+				   Text="Login" FontSize="20" TextColor="White" 
+				   HorizontalOptions="Center"
+				   VerticalOptions="Center" 
+				   InputTransparent="True"/>
 			
-			<Button Image="RedBTN.png" Grid.Row="2" Grid.Column="0" />
-			<Label Text="Register" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" InputTransparent="True"/>
+			<Label Grid.Row="1" Grid.Column="0"
+				   HorizontalOptions="Center" VerticalOptions="Center"
+				   Text="Forgot your password?" TextColor="Red" 
+				   InputTransparent="True"
+				   Margin="0,0,0,30"/>
+			
+			<Button Grid.Row="2" Grid.Column="0" />
+			<Image Grid.Row="2" Grid.Column="0" Source="RedBTN.png"/>
+			<Label Grid.Row="2" Grid.Column="0" 
+				   Text="Register" FontSize="20" TextColor="White" 
+				   HorizontalOptions="Center"
+				   VerticalOptions="Center" 
+				   InputTransparent="True"/>
 		</Grid>
 
-		<Label Text="@2016 SapphireView Inc. All right Reserved" HorizontalOptions="Center"/>
+		<Label Text="@2016 SapphireView Inc. All right Reserved" TextColor="White"
+			   HorizontalOptions="Center" VerticalOptions="EndAndExpand"
+			   Margin="0,0,0,10"/>
 
 	</StackLayout>
 	

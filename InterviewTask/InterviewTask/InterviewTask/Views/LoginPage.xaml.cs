@@ -18,8 +18,13 @@ namespace InterviewTask.Views
 		public LoginPage()
 		{
 			BindingContext = this.viewModel = new LoginViewModel();
-
+			
 			InitializeComponent ();
+		}
+
+		void ChangeCheckBoxStatus()
+		{
+			RememberPasswordCheckbox.IsVisible = !RememberPasswordCheckbox.IsVisible;
 		}
 	}
 }
