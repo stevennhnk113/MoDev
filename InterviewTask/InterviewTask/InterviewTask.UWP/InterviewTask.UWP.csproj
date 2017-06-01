@@ -97,6 +97,13 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="LoginBackground.png" />
+    <Content Include="Twitter.png" />
+    <Content Include="Txt.png" />
+    <Content Include="TxtFoucus.png" />
+    <Content Include="UnCheckBox.png" />
+    <Content Include="Wechat.png" />
+    <Content Include="Weibo.png" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -114,8 +121,13 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CheckBox.png" />
+    <Content Include="Facebook.png" />
+    <Content Include="Google.png" />
     <Content Include="profile_generic.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="QQ.png" />
+    <Content Include="RedBTN.png" />
     <Content Include="slideout.png" />
   </ItemGroup>
   <ItemGroup>

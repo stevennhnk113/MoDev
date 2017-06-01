@@ -3,7 +3,7 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 x:Class="InterviewTask.Views.LoginPage"
 			 x:Name="LoginPage"
-			 BackgroundColor="RosyBrown">
+			 BackgroundImage="LoginBackground.png">
 
 
 	<StackLayout>
@@ -21,42 +21,62 @@
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="*" />
 			</Grid.ColumnDefinitions>
-			<Image Source="Facebook.png" Grid.Row="0" Grid.Column="1"/>
-			<Image Source="Twitter.png" Grid.Row="0" Grid.Column="2"/>
-			<Image Source="Google.png" Grid.Row="0" Grid.Column="3"/>
-			<Image Source="QQ.png" Grid.Row="1" Grid.Column="1"/>
-			<Image Source="Wechat.png" Grid.Row="1" Grid.Column="2"/>
-			<Image Source="Weibo.png" Grid.Row="1" Grid.Column="3"/>
+			<Image Source="Facebook.png" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+			<Image Source="Twitter.png" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+			<Image Source="Google.png" Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center"/>
+			<Image Source="QQ.png" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+			<Image Source="Wechat.png" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+			<Image Source="Weibo.png" Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center"/>
 		</Grid>
 
 		<Label FontSize="Small" TextColor="White" HorizontalTextAlignment="Center" Text="Or" />
 
-		<StackLayout Spacing="3">
-			<RelativeLayout HorizontalOptions="Center">
-				<!--<Entry Text="" Placeholder="Username" Style="{StaticResource LoginInput}" />-->
-				<Image Source="Txt.png"/>
-			</RelativeLayout>
-
-			<RelativeLayout HorizontalOptions="Center">
-				<!--<Entry Text="" Placeholder="Password" IsPassword="True" Style="{StaticResource LoginInput}" />-->
-				<Image Source="Txt.png" />
-			</RelativeLayout>
-		</StackLayout>
-
-		<Grid>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="*" />
-			</Grid.RowDefinitions>
+		<Grid HorizontalOptions="Center">
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
-			<Image Source="UnCheckBox.png" Grid.Row="0" Grid.Column="0"/>
-			<Label Text="Twitter.png" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Image Source="Txt.png" Grid.Column="0" Grid.Row="0" />
+			<Entry Text="" Placeholder="Username" Style="{StaticResource LoginInput}"  Grid.Column="0" Grid.Row="0"/>
+			<Image Source="Txt.png" Grid.Column="0" Grid.Row="1"/>
+			<Entry Text="" Placeholder="Password" IsPassword="True" Style="{StaticResource LoginInput}" Grid.Column="0" Grid.Row="1"/>
 		</Grid>
 
+		<Grid HorizontalOptions="Center">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Image Source="UnCheckBox.png" Grid.Row="0" Grid.Column="0" />
+			<Label Text="Remember me?" Grid.Row="0" Grid.Column="1" LineBreakMode="NoWrap" VerticalOptions="Center"/>
+		</Grid>
 
+		<Grid HorizontalOptions="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<Button Image="RedBTN.png" Grid.Row="0" Grid.Column="0" />
+			<Label Text="Login" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" InputTransparent="True"/>
+			
+			<Label Text="Forgot your password?" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" InputTransparent="True" TextColor="Red" Margin="0,0,0,30"/>
+			
+			<Button Image="RedBTN.png" Grid.Row="2" Grid.Column="0" />
+			<Label Text="Register" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" InputTransparent="True"/>
+		</Grid>
+
+		<Label Text="@2016 SapphireView Inc. All right Reserved" HorizontalOptions="Center"/>
 
 	</StackLayout>
 	
