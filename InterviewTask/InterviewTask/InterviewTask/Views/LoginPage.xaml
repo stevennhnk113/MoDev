@@ -2,122 +2,185 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 x:Class="InterviewTask.Views.LoginPage"
-			 x:Name="LoginPage"
 			 BackgroundImage="LoginBackground.png">
 
-	<StackLayout>
-		<Label Text="Log In" FontSize="35" TextColor="White" 
-			   HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"
-			   Margin="0,0,0,0"/>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Entry">
+				<Setter Property="BackgroundColor" Value="Transparent"/>
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
 
-		<Grid Style="{StaticResource GridInLoginPage}">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*" />
-			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="Auto" />
-				<ColumnDefinition Width="Auto" />
-				<ColumnDefinition Width="Auto" />
-				<ColumnDefinition Width="*" />
-			</Grid.ColumnDefinitions>
-			<Image Source="Facebook.png" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+	<ContentPage.Content>
+		<StackLayout>
+			<Image Source="BackArrow.png" 
+			   HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="20"
+			   Margin="10, 10, 0, 0">
 				<Image.GestureRecognizers>
-					<TapGestureRecognizer NumberOfTapsRequired="1" />
-				</Image.GestureRecognizers>	
+					<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Exit"/>
+				</Image.GestureRecognizers>
 			</Image>
-			<Image Source="Twitter.png" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"/>
-			<Image Source="Google.png" Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center"/>
-			<Image Source="QQ.png" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
-			<Image Source="Wechat.png" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"/>
-			<Image Source="Weibo.png" Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center"/>
-		</Grid>
 
-		<Label FontSize="Small" TextColor="White" HorizontalTextAlignment="Center" Text="Or" />
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				<Label Text="Log In" FontSize="35" TextColor="White"
+				   Grid.Row="1"
+				   HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"
+				   Margin="0,0,0,0"/>
+			</Grid>
 
-		<Grid Style="{StaticResource GridInLoginPage}">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto"/>
-			</Grid.ColumnDefinitions>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="35"/>
-				<RowDefinition Height="35"/>
-			</Grid.RowDefinitions>
-			
-			<Image Grid.Column="0" Grid.Row="0" 
-				   Source="Txt.png"
-				   Aspect="Fill" Margin="0,0,0,0"/>
-			<Entry Grid.Column="0" Grid.Row="0"
-				   Placeholder="Username" FontSize="12"
-				   Style="{StaticResource LoginInput}"/>
-			
-			<Image Grid.Column="0" Grid.Row="1"
+			<Grid Style="{StaticResource GridInLoginPage}">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="45" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="45" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="45" />
+				</Grid.ColumnDefinitions>
+				<Image x:Name="FacebookIcon" Source="Facebook.png" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnTapGestureRecognizerTapped"/>
+					</Image.GestureRecognizers>
+				</Image>
+				<Image Source="Twitter.png" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnTapGestureRecognizerTapped"/>
+					</Image.GestureRecognizers>
+				</Image>
+				<Image Source="Google.png" Grid.Row="0" Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Center">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnTapGestureRecognizerTapped"/>
+					</Image.GestureRecognizers>
+				</Image>
+				<Image Source="QQ.png" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnTapGestureRecognizerTapped"/>
+					</Image.GestureRecognizers>
+				</Image>
+				<Image Source="Wechat.png" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnTapGestureRecognizerTapped"/>
+					</Image.GestureRecognizers>
+				</Image>
+				<Image Source="Weibo.png" Grid.Row="1" Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Center">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnTapGestureRecognizerTapped"/>
+					</Image.GestureRecognizers>
+				</Image>
+			</Grid>
+
+			<Label FontSize="Small" TextColor="White" HorizontalTextAlignment="Center" Text="Or" />
+
+			<Grid Style="{StaticResource GridInLoginPage}">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="35"/>
+					<RowDefinition Height="35"/>
+				</Grid.RowDefinitions>
+
+				<Image Grid.Column="0" Grid.Row="0" 
 				   Source="Txt.png"
 				   Aspect="Fill"/>
-			<Entry Grid.Column="0" Grid.Row="1"
+				<Image x:Name="UsernameInputBoxFocus" 
+				   Grid.Column="0" Grid.Row="0" 
+				   Source="TxtFocus.png"
+				   Aspect="Fill"
+				   IsVisible="False"/>
+				<Entry Grid.Column="0" Grid.Row="0"
+				   Focused="ChangeUsernameInputBoxFocus" Unfocused="ChangeUsernameInputBoxFocus"
+				   Placeholder="Username" FontSize="12"
+				   Style="{StaticResource LoginInput}"
+				   BackgroundColor="Transparent" />
+
+				<Image Grid.Column="0" Grid.Row="1"
+				   Source="Txt.png"
+				   Aspect="Fill"
+				   IsVisible="True"/>
+				<Image x:Name="PasswordInputBoxFocus"
+				   Grid.Column="0" Grid.Row="1" 
+				   Source="TxtFocus.png"
+				   Aspect="Fill"
+				   IsVisible="False"/>
+				<Entry Grid.Column="0" Grid.Row="1"
+				   Focused="ChangePasswordInputBoxFocus" Unfocused="ChangePasswordInputBoxFocus"
 				   Placeholder="Password" FontSize="12"
 				   Style="{StaticResource LoginInput}"
 				   IsPassword="True" />
-		</Grid>
+			</Grid>
 
-		<Grid Style="{StaticResource GridInLoginPage}" BackgroundColor="White">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto"/>
-			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto"/>
-				<ColumnDefinition Width="Auto"/>
-				<ColumnDefinition Width="Auto"/>
-			</Grid.ColumnDefinitions>
-			<Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+			<Grid Style="{StaticResource GridInLoginPage}">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="30"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
 					Clicked="ChangeCheckBoxStatus" 
 					BackgroundColor="Transparent" BorderColor="Transparent" Opacity="0"/>
-			<Image x:Name="RememberPasswordUnCheckbox" Source="UnCheckBox.png" Grid.Row="0" Grid.Column="0" IsVisible="True"/>
-			<Image x:Name="RememberPasswordCheckbox" Source="CheckBox.png" Grid.Row="0" Grid.Column="0" IsVisible="False"/>
-			<Label Grid.Row="0" Grid.Column="1" 
+				<Image x:Name="RememberPasswordUnCheckbox" Source="UnCheckBox.png" Grid.Row="0" Grid.Column="0" IsVisible="True"/>
+				<Image x:Name="RememberPasswordCheckbox" Source="CheckBox.png" Grid.Row="0" Grid.Column="0" IsVisible="False"/>
+				<Label Grid.Row="0" Grid.Column="1" 
 				   Text="Remember me?" 
 				   LineBreakMode="NoWrap" VerticalOptions="Center"/>
-		</Grid>
+			</Grid>
 
-		<Grid Style="{StaticResource GridInLoginPage}">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto"/>
-			</Grid.ColumnDefinitions>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="35" />
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="35"/>
-			</Grid.RowDefinitions>
-			
-			<Button Grid.Row="0" Grid.Column="0"/>
-			<Image Grid.Row="0" Grid.Column="0" Source="RedBTN.png"/>
-			<Label Grid.Row="0" Grid.Column="0" 
+			<Grid Style="{StaticResource GridInLoginPage}">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="35" />
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="35"/>
+				</Grid.RowDefinitions>
+
+				<Button Grid.Row="0" Grid.Column="0" Clicked="LogUserIn"/>
+				<Image Grid.Row="0" Grid.Column="0" Source="RedBTN.png"/>
+				<Label Grid.Row="0" Grid.Column="0" 
 				   Text="Login" FontSize="20" TextColor="White" 
 				   HorizontalOptions="Center"
 				   VerticalOptions="Center" 
 				   InputTransparent="True"/>
-			
-			<Label Grid.Row="1" Grid.Column="0"
+
+				<Label Grid.Row="1" Grid.Column="0"
 				   HorizontalOptions="Center" VerticalOptions="Center"
-				   Text="Forgot your password?" TextColor="Red" 
-				   InputTransparent="True"
-				   Margin="0,0,0,30"/>
-			
-			<Button Grid.Row="2" Grid.Column="0" />
-			<Image Grid.Row="2" Grid.Column="0" Source="RedBTN.png"/>
-			<Label Grid.Row="2" Grid.Column="0" 
+				   Text="Forgot your password?" TextColor="Red"
+				   Margin="0,0,0,20">
+					<Label.GestureRecognizers>
+						<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnTapGestureRecognizerTapped"/>
+					</Label.GestureRecognizers>
+				</Label>
+
+				<Button Grid.Row="2" Grid.Column="0" Clicked="LogUserIn"/>
+				<Image Grid.Row="2" Grid.Column="0" Source="RedBTN.png"/>
+				<Label Grid.Row="2" Grid.Column="0" 
 				   Text="Register" FontSize="20" TextColor="White" 
 				   HorizontalOptions="Center"
 				   VerticalOptions="Center" 
 				   InputTransparent="True"/>
-		</Grid>
+			</Grid>
 
-		<Label Text="@2016 SapphireView Inc. All right Reserved" TextColor="White"
+			<Label Text="@2016 SapphireView Inc. All right Reserved" TextColor="White"
 			   HorizontalOptions="Center" VerticalOptions="EndAndExpand"
-			   Margin="0,0,0,10"/>
+			   Margin="0,0,0,10"
+			   FontSize="10"/>
 
-	</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
 	
 	
 </ContentPage>

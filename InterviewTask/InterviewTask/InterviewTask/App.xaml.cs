@@ -17,7 +17,12 @@ namespace InterviewTask
 
 		public static void SetMainPage()
 		{
-			Current.MainPage = new LoginPage();
-        }
+			LoginPage LoginPage = new LoginPage();
+			Current.MainPage = new NavigationPage(LoginPage);
+			NavigationPage.SetHasNavigationBar(Current.MainPage.Navigation.NavigationStack[Current.MainPage.Navigation.NavigationStack.Count - 1], false);
+			MessagingCenter.Subscribe<ContentPage>(Current.MainPage, "RemoveNavigationBar", (sender) => {
+				NavigationPage.SetHasNavigationBar(Current.MainPage.Navigation.NavigationStack[Current.MainPage.Navigation.NavigationStack.Count - 1], false);
+			});
+		}
 	}
 }

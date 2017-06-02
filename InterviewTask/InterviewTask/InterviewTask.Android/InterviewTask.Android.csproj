@@ -177,7 +177,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\Txt.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\TxtFoucus.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TxtFocus.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\UnCheckBox.png" />
@@ -192,7 +192,7 @@
     <AndroidResource Include="Resources\drawable-mdpi\Txt.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-mdpi\TxtFoucus.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\TxtFocus.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-mdpi\UnCheckBox.png" />
@@ -207,7 +207,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\Txt.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-xhdpi\TxtFoucus.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\TxtFocus.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\UnCheckBox.png" />
@@ -222,6 +222,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\SplashScreenLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\BackArrow.png" />
   </ItemGroup>
   <Import Project="..\InterviewTask\InterviewTask.projitems" Label="Shared" Condition="Exists('..\InterviewTask\InterviewTask.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

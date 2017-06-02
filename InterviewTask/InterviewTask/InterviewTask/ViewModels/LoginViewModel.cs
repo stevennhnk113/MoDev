@@ -10,9 +10,13 @@ namespace InterviewTask.ViewModels
 {
 	public class LoginViewModel : BaseViewModel
 	{
-		public LoginViewModel ()
+		public string Username { get; set; }
+		public string Password { get; set; }
+
+		public LoginViewModel()
 		{
-			Title = "Log In";
+			Username = string.Empty;
+			Password = string.Empty;
 		}
 	}
 }
