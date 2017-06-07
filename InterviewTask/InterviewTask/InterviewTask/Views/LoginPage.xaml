@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 x:Class="InterviewTask.Views.LoginPage"
-			 BackgroundImage="LoginBackground.png">
+			 x:Class="InterviewTask.Views.LoginPage">
 
-	<ContentPage.Resources>
+
+	<!--<ContentPage.Resources>
 		<ResourceDictionary>
-			<Style TargetType="Entry">
-				<Setter Property="BackgroundColor" Value="Transparent"/>
+			<Style TargetType="Grid">
+				<Setter Property="WidthRequest" Value="200"/>
+				<Setter Property="HorizontalOptions" Value="Center"/>
 			</Style>
 		</ResourceDictionary>
 	</ContentPage.Resources>
-
+	
 	<ContentPage.Content>
-		<StackLayout>
+		<StackLayout x:Name="Test">
 			<Image Source="BackArrow.png" 
 			   HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="20"
 			   Margin="10, 10, 0, 0">
@@ -34,7 +35,7 @@
 				   Margin="0,0,0,0"/>
 			</Grid>
 
-			<Grid Style="{StaticResource GridInLoginPage}">
+			<Grid>
 				<Grid.RowDefinitions>
 					<RowDefinition Height="*"/>
 					<RowDefinition Height="*" />
@@ -46,7 +47,7 @@
 					<ColumnDefinition Width="*" />
 					<ColumnDefinition Width="45" />
 				</Grid.ColumnDefinitions>
-				<Image x:Name="FacebookIcon" Source="Facebook.png" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+				<Image Source="Facebook.png" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
 					<Image.GestureRecognizers>
 						<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnTapGestureRecognizerTapped"/>
 					</Image.GestureRecognizers>
@@ -80,7 +81,23 @@
 
 			<Label FontSize="Small" TextColor="White" HorizontalTextAlignment="Center" Text="Or" />
 
-			<Grid Style="{StaticResource GridInLoginPage}">
+			<Grid>
+				<Grid.Resources>
+					<ResourceDictionary>
+						<Style TargetType="Entry" >
+							<Setter Property="BackgroundColor" Value="Transparent"/>
+							<Setter Property="FontSize" Value="12"/>
+							<Setter Property="TextColor" Value="White"/>
+							<Setter Property="PlaceholderColor" Value="White"/>
+							<Setter Property="VerticalOptions" Value="Center"/>
+							<Setter Property="Margin" Value="0,0,0,0"/>
+						</Style>
+						<Style TargetType="Image">
+							<Setter Property="Aspect" Value="Fill"/>
+						</Style>
+					</ResourceDictionary>
+				</Grid.Resources>
+
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 				</Grid.ColumnDefinitions>
@@ -89,37 +106,37 @@
 					<RowDefinition Height="35"/>
 				</Grid.RowDefinitions>
 
-				<Image Grid.Column="0" Grid.Row="0" 
-				   Source="Txt.png"
-				   Aspect="Fill"/>
-				<Image x:Name="UsernameInputBoxFocus" 
-				   Grid.Column="0" Grid.Row="0" 
-				   Source="TxtFocus.png"
-				   Aspect="Fill"
-				   IsVisible="False"/>
-				<Entry Grid.Column="0" Grid.Row="0"
-				   Focused="ChangeUsernameInputBoxFocus" Unfocused="ChangeUsernameInputBoxFocus"
-				   Placeholder="Username" FontSize="12"
-				   Style="{StaticResource LoginInput}"
-				   BackgroundColor="Transparent" />
+				<Image Grid.Column="0" Grid.Row="0"
+					   Source="Txt.png"/>
+				<Image x:Name="UsernameInputBoxFocus"
+					   Grid.Column="0" Grid.Row="0"
+					   Source="TxtFocus.png"
+					   IsVisible="False"/>
+				<Entry Grid.Column="0" Grid.Row="0" Style=""
+					   Focused="ChangeUsernameInputBoxFocus" Unfocused="ChangeUsernameInputBoxFocus"
+					   Placeholder="Username"/>
 
 				<Image Grid.Column="0" Grid.Row="1"
-				   Source="Txt.png"
-				   Aspect="Fill"
-				   IsVisible="True"/>
+					   Source="Txt.png"
+					   IsVisible="True"/>
 				<Image x:Name="PasswordInputBoxFocus"
-				   Grid.Column="0" Grid.Row="1" 
-				   Source="TxtFocus.png"
-				   Aspect="Fill"
-				   IsVisible="False"/>
+					   Grid.Column="0" Grid.Row="1"
+					   Source="TxtFocus.png"
+					   IsVisible="False"/>
 				<Entry Grid.Column="0" Grid.Row="1"
-				   Focused="ChangePasswordInputBoxFocus" Unfocused="ChangePasswordInputBoxFocus"
-				   Placeholder="Password" FontSize="12"
-				   Style="{StaticResource LoginInput}"
-				   IsPassword="True" />
+					   Focused="ChangePasswordInputBoxFocus" Unfocused="ChangePasswordInputBoxFocus"
+					   Placeholder="Password"
+					   IsPassword="True" />
 			</Grid>
 
-			<Grid Style="{StaticResource GridInLoginPage}">
+			<Grid>
+				<Grid.Resources>
+					<ResourceDictionary>
+						<Style TargetType="Image">
+							<Setter Property="InputTransparent" Value="True"/>
+						</Style>
+					</ResourceDictionary>
+				</Grid.Resources>
 				<Grid.RowDefinitions>
 					<RowDefinition Height="30"/>
 				</Grid.RowDefinitions>
@@ -128,17 +145,21 @@
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="Auto"/>
 				</Grid.ColumnDefinitions>
-				<Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
-					Clicked="ChangeCheckBoxStatus" 
-					BackgroundColor="Transparent" BorderColor="Transparent" Opacity="0"/>
-				<Image x:Name="RememberPasswordUnCheckbox" Source="UnCheckBox.png" Grid.Row="0" Grid.Column="0" IsVisible="True"/>
-				<Image x:Name="RememberPasswordCheckbox" Source="CheckBox.png" Grid.Row="0" Grid.Column="0" IsVisible="False"/>
+				<Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+						Clicked="ChangeCheckBoxStatus"
+						BackgroundColor="Transparent" BorderColor="Transparent" Opacity="0"/>
+				<Image x:Name="RememberPasswordUnCheckbox" Source="UnCheckBox.png"
+					   Grid.Row="0" Grid.Column="0" IsVisible="True" 
+					   InputTransparent="True"/>
+				<Image x:Name="RememberPasswordCheckbox" Source="CheckBox.png"
+					   Grid.Row="0" Grid.Column="0" IsVisible="False" 
+					   InputTransparent="True"/>
 				<Label Grid.Row="0" Grid.Column="1" 
-				   Text="Remember me?" 
-				   LineBreakMode="NoWrap" VerticalOptions="Center"/>
+					   Text="Remember me?" 
+					   LineBreakMode="NoWrap" VerticalOptions="Center" InputTransparent="True"/>
 			</Grid>
 
-			<Grid Style="{StaticResource GridInLoginPage}">
+			<Grid>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 				</Grid.ColumnDefinitions>
@@ -148,39 +169,42 @@
 					<RowDefinition Height="35"/>
 				</Grid.RowDefinitions>
 
-				<Button Grid.Row="0" Grid.Column="0" Clicked="LogUserIn"/>
-				<Image Grid.Row="0" Grid.Column="0" Source="RedBTN.png"/>
+				<Button Grid.Row="0" Grid.Column="0"
+						Clicked="LogUserIn"/>
+				<Image Grid.Row="0" Grid.Column="0"
+					   Source="RedBTN.png" InputTransparent="True"/>
 				<Label Grid.Row="0" Grid.Column="0" 
-				   Text="Login" FontSize="20" TextColor="White" 
-				   HorizontalOptions="Center"
-				   VerticalOptions="Center" 
-				   InputTransparent="True"/>
+					   Text="Login" FontSize="20" TextColor="White"
+					   HorizontalOptions="Center"
+					   VerticalOptions="Center"
+					   InputTransparent="True"/>
 
 				<Label Grid.Row="1" Grid.Column="0"
-				   HorizontalOptions="Center" VerticalOptions="Center"
-				   Text="Forgot your password?" TextColor="Red"
-				   Margin="0,0,0,20">
+					   HorizontalOptions="Center" VerticalOptions="Center"
+					   Text="Forgot your password?" TextColor="Red"
+					   Margin="0,0,0,20">
 					<Label.GestureRecognizers>
 						<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnTapGestureRecognizerTapped"/>
 					</Label.GestureRecognizers>
 				</Label>
 
-				<Button Grid.Row="2" Grid.Column="0" Clicked="LogUserIn"/>
-				<Image Grid.Row="2" Grid.Column="0" Source="RedBTN.png"/>
-				<Label Grid.Row="2" Grid.Column="0" 
-				   Text="Register" FontSize="20" TextColor="White" 
-				   HorizontalOptions="Center"
-				   VerticalOptions="Center" 
-				   InputTransparent="True"/>
+				<Button Grid.Row="2" Grid.Column="0" 
+						Clicked="LogUserIn"/>
+				<Image Grid.Row="2" Grid.Column="0"
+					   Source="RedBTN.png"
+					   InputTransparent="True"/>
+				<Label Grid.Row="2" Grid.Column="0"
+					   Text="Register" FontSize="20" TextColor="White"
+					   HorizontalOptions="Center"
+					   VerticalOptions="Center"
+					   InputTransparent="True"/>
 			</Grid>
 
 			<Label Text="@2016 SapphireView Inc. All right Reserved" TextColor="White"
-			   HorizontalOptions="Center" VerticalOptions="EndAndExpand"
-			   Margin="0,0,0,10"
-			   FontSize="10"/>
+				   HorizontalOptions="Center" VerticalOptions="EndAndExpand"
+				   Margin="0,0,0,10"
+				   FontSize="10"/>
 
 		</StackLayout>
-	</ContentPage.Content>
-	
-	
+	</ContentPage.Content>-->
 </ContentPage>

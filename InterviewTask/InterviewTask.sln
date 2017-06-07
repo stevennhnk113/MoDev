@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "InterviewTask", "InterviewTask\InterviewTask\InterviewTask.shproj", "{C2BB845D-6B6D-4EFC-BDAD-E757E436B442}"
 EndProject
@@ -70,7 +70,6 @@ Global
 		{D58270FC-0CE6-46BF-8A7F-13806E09E1FE}.Release|x86.Build.0 = Release|Any CPU
 		{D58270FC-0CE6-46BF-8A7F-13806E09E1FE}.Release|x86.Deploy.0 = Release|Any CPU
 		{26EE2E24-E168-4607-B2D7-06CC1D0BE6B9}.Debug|Any CPU.ActiveCfg = Debug|iPhone
-		{26EE2E24-E168-4607-B2D7-06CC1D0BE6B9}.Debug|Any CPU.Build.0 = Debug|iPhone
 		{26EE2E24-E168-4607-B2D7-06CC1D0BE6B9}.Debug|ARM.ActiveCfg = Debug|iPhone
 		{26EE2E24-E168-4607-B2D7-06CC1D0BE6B9}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{26EE2E24-E168-4607-B2D7-06CC1D0BE6B9}.Debug|iPhone.Build.0 = Debug|iPhone
@@ -97,9 +96,9 @@ Global
 		{2EBEE83B-1DE9-44BC-BA33-3EBF9CA7E003}.Debug|x64.ActiveCfg = Debug|x64
 		{2EBEE83B-1DE9-44BC-BA33-3EBF9CA7E003}.Debug|x64.Build.0 = Debug|x64
 		{2EBEE83B-1DE9-44BC-BA33-3EBF9CA7E003}.Debug|x64.Deploy.0 = Debug|x64
-		{2EBEE83B-1DE9-44BC-BA33-3EBF9CA7E003}.Debug|x86.ActiveCfg = Debug|x86
-		{2EBEE83B-1DE9-44BC-BA33-3EBF9CA7E003}.Debug|x86.Build.0 = Debug|x86
-		{2EBEE83B-1DE9-44BC-BA33-3EBF9CA7E003}.Debug|x86.Deploy.0 = Debug|x86
+		{2EBEE83B-1DE9-44BC-BA33-3EBF9CA7E003}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2EBEE83B-1DE9-44BC-BA33-3EBF9CA7E003}.Debug|x86.Build.0 = Debug|Any CPU
+		{2EBEE83B-1DE9-44BC-BA33-3EBF9CA7E003}.Debug|x86.Deploy.0 = Debug|Any CPU
 		{2EBEE83B-1DE9-44BC-BA33-3EBF9CA7E003}.Release|Any CPU.ActiveCfg = Release|x86
 		{2EBEE83B-1DE9-44BC-BA33-3EBF9CA7E003}.Release|ARM.ActiveCfg = Release|ARM
 		{2EBEE83B-1DE9-44BC-BA33-3EBF9CA7E003}.Release|ARM.Build.0 = Release|ARM

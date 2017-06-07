@@ -11,18 +11,7 @@
 			<Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
 			<Color x:Key="LightTextColor">#999999</Color>
 
-			<Style x:Key="LoginInput" TargetType="Entry">
-				<Setter Property="TextColor" Value="White"/>
-				<Setter Property="PlaceholderColor" Value="White"/>
-				<Setter Property="VerticalOptions" Value="Center"/>
-				<Setter Property="VerticalOptions" Value="Center"/>
-				<Setter Property="Margin" Value="10,0,0,0"/>
-			</Style>
 
-			<Style x:Key="GridInLoginPage" TargetType="Grid">
-				<Setter Property="WidthRequest" Value="200"/>
-				<Setter Property="HorizontalOptions" Value="Center"/>
-			</Style>
 
 			<Style TargetType="NavigationPage">
 				<Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
